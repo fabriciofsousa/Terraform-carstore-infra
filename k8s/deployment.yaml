@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carstore-clientes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: carstore-clientes
+  template:
+    metadata:
+      labels:
+        app: carstore-clientes
+    spec:
+      containers:
+        - name: carstore-clientes
+          image: fabriciofsousa/fiap-carstore-clientes:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: "carstore-rds.cgtguu4oq8ce.us-east-1.rds.amazonaws.com"
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: "carstore"
+            - name: DB_USERNAME
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "postgres"
