@@ -13,7 +13,7 @@ echo "Inicializando Terraform..."
 cd ./envs/dev
 terraform init
 terraform plan
-terraform destroy -auto-approve
+terraform apply -auto-approve
 
 # Configurar kubeconfig para o cluster EKS
 echo "Configurando o acesso ao cluster EKS..."

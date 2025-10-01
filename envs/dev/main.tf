@@ -11,8 +11,10 @@ module "eks" {
 }
 
 module "rds" {
-  source  = "../../modules/rds"
-  db_name = "carstore"
+  source      = "../../modules/rds"
+  db_name     = "carstore"
+  db_username = "postgres"
+  db_password = "postgres"
 }
 
 module "dynamodb" {

@@ -21,3 +21,19 @@ output "dynamodb_table_arn" {
 output "ecr_url" {
   value = module.ecr.repository_url
 }
+output "db_endpoint" {
+  value = module.rds.db_endpoint
+}
+
+output "spring_datasource_url" {
+  value = "jdbc:postgresql://${module.rds.db_endpoint}:5432/${module.rds.db_name}"
+}
+
+output "spring_datasource_username" {
+  value = module.rds.db_username
+}
+
+output "spring_datasource_password" {
+  value     = module.rds.db_password
+  sensitive = true
+}
