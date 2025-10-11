@@ -77,7 +77,6 @@ Antes de rodar o Terraform, certifique-se de que você possui:
 Após a execução, serão exibidos:
 - `cognito_pool_id`
 - `documentdb_endpoint`
-- `ecr_url`
 - `rds_endpoint`
 - `cluster_name`
 

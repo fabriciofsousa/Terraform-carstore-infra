@@ -13,7 +13,7 @@ resource "aws_cognito_user_pool_client" "this" {
     "ALLOW_REFRESH_TOKEN_AUTH"
   ]
 
-  allowed_oauth_flows = ["password"]
+  allowed_oauth_flows = ["code"]
   allowed_oauth_scopes = ["openid", "email"]
   allowed_oauth_flows_user_pool_client = true
   supported_identity_providers = ["COGNITO"]

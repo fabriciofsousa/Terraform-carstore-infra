@@ -1,6 +1,7 @@
-output "eks_cluster_name" {
-  value = module.eks.cluster_name
+output "ecs_cluster_arn" {
+  value = module.ecs.cluster_arn
 }
+
 
 output "cognito_pool_id" {
   value = module.cognito.user_pool_id
@@ -18,9 +19,6 @@ output "dynamodb_table_arn" {
   value = module.dynamodb.table_arn
 }
 
-output "ecr_url" {
-  value = module.ecr.repository_url
-}
 output "db_endpoint" {
   value = module.rds.db_endpoint
 }
